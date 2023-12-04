@@ -30,8 +30,12 @@ namespace Pr_1
 
         private void BtnPermutation_Click(object sender, EventArgs e)
         {
-            // Получаем значение из текстового поля
-            int n = int.Parse(txtn.Text);
+            int n;
+            if (!int.TryParse(txtn.Text, out n) || n <= 0)
+            {
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
+                return;
+            }
             // Вычисляем факториал числа n
             int result = Factorial(n);
             label3.Text = result.ToString();
@@ -50,9 +54,17 @@ namespace Pr_1
 
         private void btnCombination_Click(object sender, EventArgs e)
         {
-            // Получаем значения n и m из текстовых полей
-            int n = int.Parse(txtn.Text);
-            int m = int.Parse(txtm.Text);
+            int n, m;
+            if (!int.TryParse(txtn.Text, out n) || n <= 0)
+            {
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
+                return;
+            }
+            if (!int.TryParse(txtm.Text, out m) || m <= 0)
+            {
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
+                return;
+            }
             // Вычисляем значение C(m,n)
             double result = CalculateCombination(m, n);
             if (n<m)
@@ -92,8 +104,17 @@ namespace Pr_1
 
         private void btnPlacement_Click(object sender, EventArgs e)
         {
-            int n = int.Parse(txtn.Text);
-            int m = int.Parse(txtm.Text);
+            int n, m;
+            if (!int.TryParse(txtn.Text, out n) || n <= 0)
+            {
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
+                return;
+            }
+            if (!int.TryParse(txtm.Text, out m) || m <= 0)
+            {
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
+                return;
+            }
             int result = Permutation(m, n);
             if (n < m)
             {
