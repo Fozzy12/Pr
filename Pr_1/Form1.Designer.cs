@@ -59,6 +59,7 @@
             this.btnPlacement.TabIndex = 1;
             this.btnPlacement.Text = "Размещение";
             this.btnPlacement.UseVisualStyleBackColor = true;
+            this.btnPlacement.Click += new System.EventHandler(this.btnPlacement_Click);
             // 
             // BtnPermutation
             // 

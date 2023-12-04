@@ -79,5 +79,25 @@ namespace Pr_1
                 return number * Factorial1(number - 1);
             }
         }
+
+        private void btnPlacement_Click(object sender, EventArgs e)
+        {
+            int n = int.Parse(txtn.Text);
+            int m = int.Parse(txtm.Text);
+            int result = Permutation(m, n);
+            label3.Text = result.ToString();
+        }
+        public static int Permutation(int m, int n)
+        {
+            return Factorial2(n) / Factorial2(n - m);
+        }
+
+        public static int Factorial2(int number)
+        {
+            if (number <= 1)
+                return 1;
+            else
+                return number * Factorial2(number - 1);
+        }
     }
 }
