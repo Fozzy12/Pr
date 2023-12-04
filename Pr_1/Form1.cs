@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Pr_1
 {
@@ -54,7 +55,14 @@ namespace Pr_1
             int m = int.Parse(txtm.Text);
             // Вычисляем значение C(m,n)
             double result = CalculateCombination(m, n);
-            label3.Text = result.ToString();
+            if (n<m)
+            {
+                MessageBox.Show("Ошибка: n < m");
+            } 
+            else
+            {
+                label3.Text = result.ToString();
+            }
         }
         private double CalculateCombination(int m, int n)
         {
@@ -69,15 +77,17 @@ namespace Pr_1
         }
         private double Factorial1(int number)
         {
-            // Рекурсивно вычисляем факториал числа number
-            if (number == 0)
-            {
-                return 1;
-            }
-            else
-            {
-                return number * Factorial1(number - 1);
-            }
+           if (number == 0 || number == 1)
+               return 1;
+
+           long result = 1;
+
+           for (int i = 2; i <= number; i++)
+           {
+             result *= i;
+           }
+
+           return result;
         }
 
         private void btnPlacement_Click(object sender, EventArgs e)
@@ -85,7 +95,14 @@ namespace Pr_1
             int n = int.Parse(txtn.Text);
             int m = int.Parse(txtm.Text);
             int result = Permutation(m, n);
-            label3.Text = result.ToString();
+            if (n < m)
+            {
+                MessageBox.Show("Ошибка: n < m");
+            }
+            else
+            {
+                label3.Text = result.ToString();
+            }
         }
         public static int Permutation(int m, int n)
         {
