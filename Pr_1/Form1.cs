@@ -46,5 +46,38 @@ namespace Pr_1
                 return n * Factorial(n - 1);
             }
         }
+
+        private void btnCombination_Click(object sender, EventArgs e)
+        {
+            // Получаем значения n и m из текстовых полей
+            int n = int.Parse(txtn.Text);
+            int m = int.Parse(txtm.Text);
+            // Вычисляем значение C(m,n)
+            double result = CalculateCombination(m, n);
+            label3.Text = result.ToString();
+        }
+        private double CalculateCombination(int m, int n)
+        {
+            // Вычисляем факториалы чисел m и n
+            double factorialM = Factorial1(m);
+            double factorialN = Factorial1(n);
+            // Вычисляем факториал числа (n-m)
+            double factorialNM = Factorial1(n - m);
+            // Вычисляем C(m,n)
+            double combination = factorialN / (factorialM * factorialNM);
+            return combination;
+        }
+        private double Factorial1(int number)
+        {
+            // Рекурсивно вычисляем факториал числа number
+            if (number == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return number * Factorial1(number - 1);
+            }
+        }
     }
 }
