@@ -20,35 +20,30 @@ namespace Pr_1
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            // Получаем значения из текстовых полей
-            double y = double.Parse(txty.Text);
-            double z = double.Parse(txtz.Text);
-            double step = double.Parse(txtstep.Text);
-            double Xmin = double.Parse(txtXmin.Text);
-            double Xmax = double.Parse(txtXmax.Text);
+            double y, z, step, Xmin, Xmax;
             if (!double.TryParse(txty.Text, out y) || y <= 0)
             {
-                MessageBox.Show("Ошибка в поле Y. Введите положительное целое число.");
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
                 return;
             }
-            if (!double.TryParse(txty.Text, out z) || z <= 0)
+            if (!double.TryParse(txtz.Text, out z) || z <= 0)
             {
-                MessageBox.Show("Ошибка в поле Y. Введите положительное целое число.");
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
                 return;
             }
-            if (!double.TryParse(txty.Text, out step) || step <= 0)
+            if (!double.TryParse(txtstep.Text, out step) || step <= 0)
             {
-                MessageBox.Show("Ошибка в поле Y. Введите положительное целое число.");
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
                 return;
             }
-            if (!double.TryParse(txty.Text, out Xmin) || Xmin <= 0)
+            if (!double.TryParse(txtXmin.Text, out Xmin) || Xmin <= 0)
             {
-                MessageBox.Show("Ошибка в поле Y. Введите положительное целое число.");
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
                 return;
             }
-            if (!double.TryParse(txty.Text, out Xmax) || Xmax <= 0)
+            if (!double.TryParse(txtXmax.Text, out Xmax) || Xmax <= 0)
             {
-                MessageBox.Show("Ошибка в поле Y. Введите положительное целое число.");
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
                 return;
             }
             // Вычисляем количество точек

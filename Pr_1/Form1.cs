@@ -19,13 +19,37 @@ namespace Pr_1
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            // Получаем значения из текстовых полей
-            double a = double.Parse(txta.Text);
-            double b = double.Parse(txtb.Text);
-            double c = double.Parse(txtc.Text);
-            double step = double.Parse(txtstep.Text);
-            double Xmin = double.Parse(txtXmin.Text);
-            double Xmax = double.Parse(txtXmax.Text);
+            double a, b, c, Xmin, Xmax, step;
+            if (!double.TryParse(txta.Text, out a) || a <= 0)
+            {
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
+                return;
+            }
+            if (!double.TryParse(txtb.Text, out b) || b <= 0)
+            {
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
+                return;
+            }
+            if (!double.TryParse(txtc.Text, out c) || c <= 0)
+            {
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
+                return;
+            }
+            if (!double.TryParse(txtXmin.Text, out Xmin) || Xmin <= 0)
+            {
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
+                return;
+            }
+            if (!double.TryParse(txtXmax.Text, out Xmax) || Xmax <= 0)
+            {
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
+                return;
+            }
+            if (!double.TryParse(txtstep.Text, out step) || step <= 0)
+            {
+                MessageBox.Show("Данные введены неверно!", "Ошибка");
+                return;
+            }
             // Вычисляем количество точек
             int count = (int)Math.Ceiling((Xmax - Xmin) / step) + 1;
             double[] x = new double[count];
