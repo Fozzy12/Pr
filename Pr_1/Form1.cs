@@ -38,5 +38,18 @@ namespace Pr_1
             chart1.ChartAreas[0].AxisX.MajorGrid.Interval = step;
             chart1.Series[0].Points.DataBindXY(x, y);
         }
+
+        private void btnForm2_Click(object sender, EventArgs e)
+        {
+            Hide();
+            График_функции btnForm2 = new График_функции();
+            btnForm2.ShowDialog();
+            Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -144,6 +144,7 @@
             this.btnCalc.TabIndex = 21;
             this.btnCalc.Text = "Расчет";
             this.btnCalc.UseVisualStyleBackColor = true;
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
             // 
             // txtc
             // 
