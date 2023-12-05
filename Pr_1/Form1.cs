@@ -19,12 +19,14 @@ namespace Pr_1
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
+            // Получаем значения из текстовых полей
             double a = double.Parse(txta.Text);
             double b = double.Parse(txtb.Text);
             double c = double.Parse(txtc.Text);
             double step = double.Parse(txtstep.Text);
             double Xmin = double.Parse(txtXmin.Text);
             double Xmax = double.Parse(txtXmax.Text);
+            // Вычисляем количество точек
             int count = (int)Math.Ceiling((Xmax - Xmin) / step) + 1;
             double[] x = new double[count];
             double[] y = new double[count];
@@ -33,6 +35,7 @@ namespace Pr_1
                 x[i] = Xmin + step * i;
                 y[i] = a * Math.Pow(x[i], 2) + b * x[i] + c;
             }
+            // Устанавливаем минимальное и максимальное значения оси X на графике
             chart1.ChartAreas[0].AxisX.Minimum = Xmin;
             chart1.ChartAreas[0].AxisX.Maximum = Xmax;
             chart1.ChartAreas[0].AxisX.MajorGrid.Interval = step;
