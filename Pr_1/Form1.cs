@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Pr_1
 {
@@ -18,14 +17,26 @@ namespace Pr_1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCalc_Click(object sender, EventArgs e)
         {
             double a = double.Parse(txta.Text);
             double b = double.Parse(txtb.Text);
             double c = double.Parse(txtc.Text);
             double step = double.Parse(txtstep.Text);
-            double Xmin = double.Parse();
-            double Xmax = double.Parse();
+            double Xmin = double.Parse(txtXmin.Text);
+            double Xmax = double.Parse(txtXmax.Text);
+            int count = (int)Math.Ceiling((Xmax - Xmin) / step) + 1;
+            double[] x = new double[count];
+            double[] y = new double[count];
+            for (int i = 0; i < count; i++)
+            {
+                x[i] = Xmin + step * i;
+                y[i] = a * Math.Pow(x[i], 2) + b * x[i] + c;
+            }
+            chart1.ChartAreas[0].AxisX.Minimum = Xmin;
+            chart1.ChartAreas[0].AxisX.Maximum = Xmax;
+            chart1.ChartAreas[0].AxisX.MajorGrid.Interval = step;
+            chart1.Series[0].Points.DataBindXY(x, y);
         }
     }
 }

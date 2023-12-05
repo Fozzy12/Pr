@@ -103,7 +103,7 @@
             this.btnCalc.TabIndex = 5;
             this.btnCalc.Text = "Расчет";
             this.btnCalc.UseVisualStyleBackColor = true;
-            this.btnCalc.Click += new System.EventHandler(this.button1_Click);
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
             // 
             // label1
             // 
