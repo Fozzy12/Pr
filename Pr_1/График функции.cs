@@ -19,7 +19,28 @@ namespace Pr_1
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
+            double y = double.Parse(txty.Text);
+            double z = double.Parse(txtz.Text);
+            double step = double.Parse(txtstep.Text);
+            double Xmin = double.Parse(txtXmin.Text);
+            double Xmax = double.Parse(txtXmax.Text);
+            int count = (int)Math.Ceiling((Xmax - Xmin) / step) + 1;
+            double[] x = new double[count];
+            double[] w = new double[count];
+            for (int i = 0; i < count; i++)
+            {
+                x[i] = Xmin + step * i;
+                w[i] = Math.Pow(Math.Abs(Math.Cos(x[i]) - Math.Cos(y)), 1 + 2 * Math.Sin(y) * Math.Sin(y)) * (1 + z + (z * z) / 2 + (z * z * z) / 3 + (z * z * z * z) / 4);
+            }
+            chart1.ChartAreas[0].AxisX.Minimum = Xmin;
+            chart1.ChartAreas[0].AxisX.Maximum = Xmax;
+            chart1.ChartAreas[0].AxisX.MajorGrid.Interval = step;
+            chart1.Series[0].Points.DataBindXY(x, w);
+        }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
