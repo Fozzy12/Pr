@@ -23,23 +23,9 @@ namespace Pr_1
             double a = double.Parse(txta.Text);
             double b = double.Parse(txtb.Text);
             double c = double.Parse(txtc.Text);
-            double step = double.Parse(txtd.Text);
-
-            // Очищаем график перед построением нового
-            chart1.Series.Clear();
-            // Создаем новый ряд данных для графика
-            Series series = new Series();
-            series.ChartType = SeriesChartType.Line;
-
-            // Вычисляем значения функции и добавляем точки к ряду данных
-            for (double x = -10; x <= 10; x += step)
-            {
-                double y = a * x * x + b * x + c;
-                series.Points.AddXY(x, y);
-            }
-
-            // Добавляем ряд данных на график
-            chart1.Series.Add(series);
+            double step = double.Parse(txtstep.Text);
+            double Xmin = double.Parse();
+            double Xmax = double.Parse();
         }
     }
 }
