@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Pr_1
 {
@@ -25,6 +26,31 @@ namespace Pr_1
             double step = double.Parse(txtstep.Text);
             double Xmin = double.Parse(txtXmin.Text);
             double Xmax = double.Parse(txtXmax.Text);
+            if (!double.TryParse(txty.Text, out y) || y <= 0)
+            {
+                MessageBox.Show("Ошибка в поле Y. Введите положительное целое число.");
+                return;
+            }
+            if (!double.TryParse(txty.Text, out z) || z <= 0)
+            {
+                MessageBox.Show("Ошибка в поле Y. Введите положительное целое число.");
+                return;
+            }
+            if (!double.TryParse(txty.Text, out step) || step <= 0)
+            {
+                MessageBox.Show("Ошибка в поле Y. Введите положительное целое число.");
+                return;
+            }
+            if (!double.TryParse(txty.Text, out Xmin) || Xmin <= 0)
+            {
+                MessageBox.Show("Ошибка в поле Y. Введите положительное целое число.");
+                return;
+            }
+            if (!double.TryParse(txty.Text, out Xmax) || Xmax <= 0)
+            {
+                MessageBox.Show("Ошибка в поле Y. Введите положительное целое число.");
+                return;
+            }
             // Вычисляем количество точек
             int count = (int)Math.Ceiling((Xmax - Xmin) / step) + 1;
             double[] x = new double[count];
