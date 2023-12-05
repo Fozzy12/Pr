@@ -20,32 +20,11 @@ namespace Pr_1
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            double y, z, step, Xmin, Xmax;
-            if (!double.TryParse(txty.Text, out y) || y <= 0)
-            {
-                MessageBox.Show("Данные введены неверно!", "Ошибка");
-                return;
-            }
-            if (!double.TryParse(txtz.Text, out z) || z <= 0)
-            {
-                MessageBox.Show("Данные введены неверно!", "Ошибка");
-                return;
-            }
-            if (!double.TryParse(txtstep.Text, out step) || step <= 0)
-            {
-                MessageBox.Show("Данные введены неверно!", "Ошибка");
-                return;
-            }
-            if (!double.TryParse(txtXmin.Text, out Xmin) || Xmin <= 0)
-            {
-                MessageBox.Show("Данные введены неверно!", "Ошибка");
-                return;
-            }
-            if (!double.TryParse(txtXmax.Text, out Xmax) || Xmax <= 0)
-            {
-                MessageBox.Show("Данные введены неверно!", "Ошибка");
-                return;
-            }
+            double y = double.Parse(txty.Text);
+            double z = double.Parse(txtz.Text);
+            double Xmin = double.Parse(txtXmin.Text);
+            double Xmax = double.Parse(txtXmax.Text);
+            double step = double.Parse(txtstep.Text);
             // Вычисляем количество точек
             int count = (int)Math.Ceiling((Xmax - Xmin) / step) + 1;
             double[] x = new double[count];
