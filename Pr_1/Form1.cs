@@ -19,12 +19,14 @@ namespace Pr_1
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            double a = double.Parse(txta.Text);
-            double b = double.Parse(txtb.Text);
-            double c = double.Parse(txtc.Text);
-            double Xmin = double.Parse(txtXmin.Text);
-            double Xmax = double.Parse(txtXmax.Text);
-            double step = double.Parse(txtstep.Text);
+            double a, b, c, Xmax, Xmin, step;
+            if (!double.TryParse(txta.Text, out a) || !double.TryParse(txtb.Text, out b) || !double.TryParse(txtc.Text, out c) ||
+               !double.TryParse(txtstep.Text, out step) || !double.TryParse(txtXmin.Text, out Xmin) ||
+               !double.TryParse(txtXmax.Text, out Xmax))
+            {
+                MessageBox.Show("Пожалуйста, введите числовые значения.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Вычисляем количество точек
             int count = (int)Math.Ceiling((Xmax - Xmin) / step) + 1;
             double[] x = new double[count];
