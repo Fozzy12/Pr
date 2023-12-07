@@ -46,6 +46,7 @@
             this.cmR = new System.Windows.Forms.ComboBox();
             this.btnTicket = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.chT = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nmA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmK)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +117,7 @@
             // chL
             // 
             this.chL.AutoSize = true;
-            this.chL.Location = new System.Drawing.Point(18, 229);
+            this.chL.Location = new System.Drawing.Point(158, 243);
             this.chL.Name = "chL";
             this.chL.Size = new System.Drawing.Size(109, 17);
             this.chL.TabIndex = 7;
@@ -126,7 +127,7 @@
             // chU
             // 
             this.chU.AutoSize = true;
-            this.chU.Location = new System.Drawing.Point(18, 252);
+            this.chU.Location = new System.Drawing.Point(18, 243);
             this.chU.Name = "chU";
             this.chU.Size = new System.Drawing.Size(102, 17);
             this.chU.TabIndex = 8;
@@ -136,7 +137,7 @@
             // chN
             // 
             this.chN.AutoSize = true;
-            this.chN.Location = new System.Drawing.Point(18, 275);
+            this.chN.Location = new System.Drawing.Point(18, 266);
             this.chN.Name = "chN";
             this.chN.Size = new System.Drawing.Size(113, 17);
             this.chN.TabIndex = 9;
@@ -211,7 +212,7 @@
             // 
             // btnTicket
             // 
-            this.btnTicket.Location = new System.Drawing.Point(30, 298);
+            this.btnTicket.Location = new System.Drawing.Point(12, 289);
             this.btnTicket.Name = "btnTicket";
             this.btnTicket.Size = new System.Drawing.Size(200, 50);
             this.btnTicket.TabIndex = 17;
@@ -221,7 +222,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(236, 298);
+            this.btnExit.Location = new System.Drawing.Point(240, 289);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(95, 50);
             this.btnExit.TabIndex = 18;
@@ -229,11 +230,22 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // chT
+            // 
+            this.chT.AutoSize = true;
+            this.chT.Location = new System.Drawing.Point(158, 266);
+            this.chT.Name = "chT";
+            this.chT.Size = new System.Drawing.Size(109, 17);
+            this.chT.TabIndex = 19;
+            this.chT.Text = "Обратный билет";
+            this.chT.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 359);
+            this.ClientSize = new System.Drawing.Size(369, 346);
+            this.Controls.Add(this.chT);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnTicket);
             this.Controls.Add(this.cmR);
@@ -281,6 +293,7 @@
         private System.Windows.Forms.ComboBox cmR;
         private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.CheckBox chT;
     }
 }
 

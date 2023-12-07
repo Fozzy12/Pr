@@ -29,13 +29,14 @@ namespace Pr_1
             bool hasLuggage = chL.Checked;
             bool hasBedding = chU.Checked;
             bool hasFood = chN.Checked;
+            bool hasTicket = chT.Checked;
             // Расчитываем стоимость билета
-            double ticketPrice = CalculateTicketPrice(selectedWagonType, adultCount, childCount, hasLuggage, hasBedding, hasFood);
+            double ticketPrice = CalculateTicketPrice(selectedWagonType, adultCount, childCount, hasLuggage, hasBedding, hasFood, hasTicket);
             // Выводим стоимость билета в MessageBox
             MessageBox.Show($"Стоимость билета: {ticketPrice} руб.");
         }
 
-        private double CalculateTicketPrice(string wagonType, int adultCount, int childCount, bool hasLuggage, bool hasBedding, bool hasFood)
+        private double CalculateTicketPrice(string wagonType, int adultCount, int childCount, bool hasLuggage, bool hasBedding, bool hasFood, bool hasTicket)
         {
             double basePrice = GetBasePrice(wagonType);
             double totalPrice = basePrice * (adultCount + childCount * 0.95);
@@ -45,6 +46,8 @@ namespace Pr_1
                 totalPrice += 208;
             if (hasFood)
                 totalPrice += 506;
+            if (hasTicket)
+                totalPrice += basePrice;
             return totalPrice;
         }
 
