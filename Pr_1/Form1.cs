@@ -16,5 +16,6 @@ namespace Pr_1
         {
             InitializeComponent();
         }
+
     }
 }
