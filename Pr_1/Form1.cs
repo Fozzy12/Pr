@@ -16,5 +16,10 @@ namespace Pr_1
         {
             InitializeComponent();
         }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

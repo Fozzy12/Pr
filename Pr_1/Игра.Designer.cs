@@ -57,6 +57,7 @@
             this.Controls.Add(this.tlPanel);
             this.Name = "Игра";
             this.Text = "Игра";
+            this.Load += new System.EventHandler(this.Игра_Load);
             this.ResumeLayout(false);
 
         }
