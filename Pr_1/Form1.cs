@@ -20,22 +20,33 @@ namespace Pr_1
         private void btnTicket_Click(object sender, EventArgs e)
         {
             // Получаем данные
-            string selectedFlight = cmR.SelectedItem.ToString();
-            string selectedData = cmData.ToString();
-            string selectedTime = cmTime.SelectedItem.ToString();
-            string selectedWagonType = cmV.SelectedItem.ToString();
+            string selectedWagonType = cmV.Text;
             int adultCount = (int)nmA.Value;
             int childCount = (int)nmK.Value;
             bool hasLuggage = chL.Checked;
             bool hasBedding = chU.Checked;
             bool hasFood = chN.Checked;
             bool hasTicket = chT.Checked;
-            if (cmData.Value < DateTime.Now.Date) 
+            if (cmData.Value < DateTime.Now.Date)
             {
                 MessageBox.Show("Пожалуйста выберите правильную дату", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-           
+            if (string.IsNullOrWhiteSpace(selectedWagonType))
+            {
+                MessageBox.Show("Пожалуйста выберите тип вагона", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(cmR.Text))
+            {
+                MessageBox.Show("Пожалуйста выберите рейс", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(cmTime.Text))
+            {
+                MessageBox.Show("Пожалуйста выберите время", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Расчитываем стоимость билета
             double ticketPrice = CalculateTicketPrice(selectedWagonType, adultCount, childCount, hasLuggage, hasBedding, hasFood, hasTicket);
             // Выводим стоимость билета в MessageBox
