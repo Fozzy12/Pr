@@ -30,6 +30,12 @@ namespace Pr_1
             bool hasBedding = chU.Checked;
             bool hasFood = chN.Checked;
             bool hasTicket = chT.Checked;
+            if (cmData.Value < DateTime.Now.Date) 
+            {
+                MessageBox.Show("Пожалуйста выберите правильную дату", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+           
             // Расчитываем стоимость билета
             double ticketPrice = CalculateTicketPrice(selectedWagonType, adultCount, childCount, hasLuggage, hasBedding, hasFood, hasTicket);
             // Выводим стоимость билета в MessageBox
