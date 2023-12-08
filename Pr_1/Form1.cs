@@ -21,7 +21,7 @@ namespace Pr_1
         {
             // Получаем данные
             string selectedFlight = cmR.SelectedItem.ToString();
-            string selectedData = cmData.SelectedItem.ToString();
+            string selectedData = cmData.ToString();
             string selectedTime = cmTime.SelectedItem.ToString();
             string selectedWagonType = cmV.SelectedItem.ToString();
             int adultCount = (int)nmA.Value;

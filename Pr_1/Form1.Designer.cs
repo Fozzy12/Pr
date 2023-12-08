@@ -38,7 +38,6 @@
             this.chL = new System.Windows.Forms.CheckBox();
             this.chU = new System.Windows.Forms.CheckBox();
             this.chN = new System.Windows.Forms.CheckBox();
-            this.cmData = new System.Windows.Forms.ComboBox();
             this.nmA = new System.Windows.Forms.NumericUpDown();
             this.nmK = new System.Windows.Forms.NumericUpDown();
             this.cmTime = new System.Windows.Forms.ComboBox();
@@ -47,6 +46,7 @@
             this.btnTicket = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.chT = new System.Windows.Forms.CheckBox();
+            this.cmData = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.nmA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmK)).BeginInit();
             this.SuspendLayout();
@@ -144,19 +144,6 @@
             this.chN.Text = "Наличие питания";
             this.chN.UseVisualStyleBackColor = true;
             // 
-            // cmData
-            // 
-            this.cmData.FormattingEnabled = true;
-            this.cmData.Items.AddRange(new object[] {
-            "14.01.2024",
-            "10.12.2023",
-            "12.02.2024",
-            "01.01.2024"});
-            this.cmData.Location = new System.Drawing.Point(126, 73);
-            this.cmData.Name = "cmData";
-            this.cmData.Size = new System.Drawing.Size(179, 21);
-            this.cmData.TabIndex = 10;
-            // 
             // nmA
             // 
             this.nmA.Location = new System.Drawing.Point(167, 167);
@@ -178,7 +165,10 @@
             "08:45",
             "12:30",
             "18:23",
-            "01:29"});
+            "01:29",
+            "10:28",
+            "13:37",
+            "04:33"});
             this.cmTime.Location = new System.Drawing.Point(126, 100);
             this.cmTime.Name = "cmTime";
             this.cmTime.Size = new System.Drawing.Size(179, 21);
@@ -240,11 +230,19 @@
             this.chT.Text = "Обратный билет";
             this.chT.UseVisualStyleBackColor = true;
             // 
+            // cmData
+            // 
+            this.cmData.Location = new System.Drawing.Point(126, 73);
+            this.cmData.Name = "cmData";
+            this.cmData.Size = new System.Drawing.Size(179, 20);
+            this.cmData.TabIndex = 20;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(369, 346);
+            this.Controls.Add(this.cmData);
             this.Controls.Add(this.chT);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnTicket);
@@ -253,7 +251,6 @@
             this.Controls.Add(this.cmTime);
             this.Controls.Add(this.nmK);
             this.Controls.Add(this.nmA);
-            this.Controls.Add(this.cmData);
             this.Controls.Add(this.chN);
             this.Controls.Add(this.chU);
             this.Controls.Add(this.chL);
@@ -285,7 +282,6 @@
         private System.Windows.Forms.CheckBox chL;
         private System.Windows.Forms.CheckBox chU;
         private System.Windows.Forms.CheckBox chN;
-        private System.Windows.Forms.ComboBox cmData;
         private System.Windows.Forms.NumericUpDown nmA;
         private System.Windows.Forms.NumericUpDown nmK;
         private System.Windows.Forms.ComboBox cmTime;
@@ -294,6 +290,7 @@
         private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.CheckBox chT;
+        private System.Windows.Forms.DateTimePicker cmData;
     }
 }
 
